@@ -38,7 +38,7 @@ struct RGBValue {
     }
 };
 
-class QOIImage {
+class QOIConverter {
 private:
     RGBValue index[64];
     vector<RGBValue> m_RGBBytes;
@@ -49,7 +49,7 @@ private:
     uint32_t m_colorspace;
 
 public:
-    QOIImage() {
+    QOIConverter() {
         for (int i=0; i<64; i++)
             index[i] = RGBValue(); // initialize to NULL
     }
@@ -395,7 +395,7 @@ public:
 
 
 int main() {
-    QOIImage img;
+    QOIConverter img;
 
     auto start = chrono::high_resolution_clock::now();
     
